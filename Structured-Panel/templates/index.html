@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title> IDS | Cyber05 | Single Packet Prediction </title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{{ url_for('static', filename='../style.css') }}">
+  
+</head>
+
+<body style="background: #FFFFFF;">
+ <div class="login">
+	<br>
+	<h3> Enter the details in the fields below to predict </h3>
+
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="dst_port" placeholder="dst_port" required="required" />
+		<input type="text" name="init_fwd_win_byts" placeholder="init_fwd_win_byts" required="required" />
+		<input type="text" name="flow_iat_mean" placeholder="flow_iat_mean" required="required" />
+		<input type="text" name="flow_duration" placeholder="flow_duration" required="required" />
+		<input type="text" name="flow_iat_min" placeholder="flow_iat_min" required="required" />
+		<input type="text" name="fwd_header_len" placeholder="fwd_header_len" required="required" />
+		<input type="text" name="fwd_seg_size_min" placeholder="fwd_seg_size_min" required="required" />
+		<input type="text" name="fwd_iat_tot" placeholder="fwd_iat_tot" required="required" />
+		<input type="text" name="active_mean" placeholder="active_mean" required="required" />
+		<input type="text" name="bwd_pkts_s" placeholder="bwd_pkts_s" required="required" />
+		
+		<p>
+		<br>
+		<br>
+		<center>
+		<br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button> </p> </center>
+		
+    </form>
+	<br><br>
+	</section></center>
+	<br>
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+ 
+ <footer>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<p style="text-align:right"> <small> &copy; 2020 Deployment Cyber05 </small> </p>
+</footer>
+</body>
+</html>
